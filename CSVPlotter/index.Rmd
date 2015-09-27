@@ -1,0 +1,48 @@
+---
+title       : XY - Plotter from csv files
+subtitle    : 
+author      : SAI TEJA
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+
+
+## WHY CSV Data Visualizer?
+
+*  App plots simple XY plot from an user defined csv file
+*  Post Processing Data is essential for many applications especially in engineering
+* Most common type of plots required are XY plots between two variables 
+* Preliminary stage app which helps in plooting simple plots through R with out actually knowing R
+
+---
+
+## Sample CSV File
+
+```{r}
+data_csv = read.csv("C:/Users/saiteja/Documents/Coursera/developing data products/courseproj_slidify/CSVPlotter/data_sample.csv")
+ data<-na.omit(data_csv)
+
+head(data, n=5)
+```
+
+---
+## Sample XY Plot
+
+```{r}
+library(ggplot2, quietly = TRUE)
+qplot(data$DAY, data$Temperature, geom = "line")
+```
+
+---
+## Uses
+
+* This app can be used to plot for many applications and can be used as an online tool
+
+* It can be extended to other types of plots
+
